@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 const chicleFont = Chicle({
   variable: "--font-chicle",
   subsets: ["latin"],
-  weight: ["400"]
+  weight: ["400"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,13 +26,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${geistSans.variable}
+          ${geistMono.variable}
+          ${chicleFont.variable}
+          antialiased
+        `}
       >
         {children}
       </body>

@@ -183,7 +183,7 @@ const FlourishWaveFoods: React.FC = () => {
     {
       title: "Rice Meals",
       items: [
-        { name: "Amak's Special Rice", price: 4000 },
+        { name: "Flourish Special Rice", price: 4000 },
         { name: "Special Fried Rice", price: 4000 },
         { name: "Asun Rice", price: 4000 },
         { name: "Chinese Rice", price: 4000 },
@@ -361,11 +361,11 @@ const FlourishWaveFoods: React.FC = () => {
             <Image
             src="/images/logo_.png"
             alt='logo'
-            width={100}
-            height={50}
+            width={50}
+            height={30}
             />
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold bg-linear-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <h1 className="font-chicle text-2xl md:text-3xl font-bold bg-linear-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
               Flourish Wave Foods
             </h1>
             <p className="text-xs text-gray-400">Delicious meals, delivered fresh</p>
