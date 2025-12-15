@@ -148,11 +148,11 @@ const FlourishWaveFoods: React.FC = () => {
       items: [
         { name: "Farm Fresh (1LTR)", price: 6500 },
         { name: "Farm Fresh (500ML)", price: 3500 },
-        { name: "Amak Yoghurt (Big)", price: 4500 },
-        { name: "Amak Blended Yoghurt (1LTR)", price: 5500 },
-        { name: "Amak Yoghurt (500ML)", price: 2500 },
-        { name: "Amak Yoghurt (250ML)", price: 1500 },
-        { name: "Amak Blended Yoghurt (500ML)", price: 3500 },
+        { name: "Flourish Yoghurt (Big)", price: 4500 },
+        { name: "Flourish Blended Yoghurt (1LTR)", price: 5500 },
+        { name: "Flourish Yoghurt (500ML)", price: 2500 },
+        { name: "Flourish Yoghurt (250ML)", price: 1500 },
+        { name: "Flourish Blended Yoghurt (500ML)", price: 3500 },
         { name: "Vita Milk", price: 2500 },
       ]
     },
@@ -359,15 +359,17 @@ const FlourishWaveFoods: React.FC = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className='flex items-center'>
             <Image
-            src="/images/logo.png"
+            src="/images/logo_.png"
             alt='logo'
             width={100}
             height={50}
             />
-            <h1 className="text-2xl md:text-3xl font-bold bg-linear-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold bg-linear-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
               Flourish Wave Foods
             </h1>
             <p className="text-xs text-gray-400">Delicious meals, delivered fresh</p>
+            </div>
           </div>
           
           <div className="flex items-center gap-4">
