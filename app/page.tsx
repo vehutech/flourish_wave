@@ -497,7 +497,8 @@ const FlourishWaveFoods: React.FC = () => {
                               {item.name}
                             </h3>
                             <p className="text-3xl font-bold text-orange-500">
-                              ₦{item.price.toLocaleString()}
+                              {category.title !== "Soups" && `₦${item.price.toLocaleString()}`}
+                              {item.name === "Additional Soup" && "₦2,500"}
                             </p>
                           </div>
                         </div>
