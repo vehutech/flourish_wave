@@ -34,6 +34,7 @@ const FlourishWaveFoods: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isScrollingProgrammatically = useRef<boolean>(false);
+  const [isSearchBarVisible, setIsSearchBarVisible] = useState<boolean>(false);
 
   const restaurantWhatsApp = '2349035011663';
 
@@ -89,6 +90,9 @@ const FlourishWaveFoods: React.FC = () => {
         { name: "Fried Goat Meat", price: 4000 },
         { name: "Turkey", price: 6000 },
         { name: "Beef (Grilled)", price: 5000 },
+        { name: "Beef Pepper Soup", price: 4000 },
+        { name: "Chicken Pepper Soup", price: 5000 },
+        { name: "Fish Pepper Soup", price: 5000 },
         { name: "Fried Chicken", price: 4000 },
         { name: "Goat Meat Pepper Soup", price: 4000 },
         { name: "Fresh Fish", price: 5000 },
@@ -170,6 +174,30 @@ const FlourishWaveFoods: React.FC = () => {
         { name: "Climax", price: 1500 },
         { name: "Monster", price: 2000 },
         { name: "Fayrouz/Coke/Fanta/Sprite", price: 1000 },
+        { name: "Hollandia", price: 3_000},
+        { name: "Guilder", price: 1_500},
+        { name: "Goldberg", price: 1_500},
+        { name: "Medium Stout", price: 1_500},
+        { name: "Star", price: 1_500},
+        { name: "Star Radler", price: 1_500},
+        { name: "Disperado", price: 1_200},
+        { name: "Trophy", price: 1_000},
+        { name: "Trophy Staut", price: 1_500},
+        { name: "Legend", price: 1_500},
+        { name: "Coke", price: 1_000},
+        { name: "Fanta", price: 1_000},
+        { name: "Sprite", price: 1_000},
+        { name: "Predator", price: 1_000},
+        { name: "Climax", price: 1_000},
+        { name: "Monster Energy", price: 2_000},
+        { name: "Power House", price: 2_000},
+        { name: "Black Bullet", price: 2_000},
+        { name: "Scudrum", price: 2_500},
+        { name: "Blue Bullet", price: 1_500},
+        { name: "Lakuku", price: 1_000},
+        { name: "Origin Bitter", price: 1_000},
+        { name: "Hirno", price: 1_500},
+        { name: "Henneken", price: 1_500},
       ]
     },
     {
@@ -213,10 +241,10 @@ const FlourishWaveFoods: React.FC = () => {
     {
       title: "Soups",
       items: [
-        { name: "Egusi", price: 2500 },
-        { name: "Vegetable", price: 2500 },
-        { name: "Stew", price: 2500 },
-        { name: "Ogbono", price: 2500 },
+        { name: "Egusi", price: 0 },
+        { name: "Vegetable", price: 0 },
+        { name: "Stew", price: 0 },
+        { name: "Ogbono", price: 0 },
         { name: "Additional Soup", price: 2500 },
       ]
     }
@@ -364,17 +392,23 @@ const FlourishWaveFoods: React.FC = () => {
             width={50}
             height={30}
             />
-            <div>
+            {
+              !isSearchBarVisible && (
+                  <div>
               <h1 className="font-chicle text-2xl md:text-3xl font-bold bg-linear-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-              Flourish Wave Foods
+              Flourish Wave
             </h1>
-            <p className="text-xs text-gray-400">Delicious meals, delivered fresh</p>
+            <p className="text-xs text-gray-400">Delicious meals</p>
             </div>
+              )
+            }
           </div>
           
           <div className="flex items-center gap-4">
             <div className="relative">
-              <input
+              {isSearchBarVisible ? (
+                <div>
+                   <input
                 type="text"
                 placeholder="Search menu..."
                 value={searchQuery}
@@ -389,7 +423,20 @@ const FlourishWaveFoods: React.FC = () => {
                 >
                   <X className="w-4 h-4 text-gray-400 hover:text-white" />
                 </button>
+                
               )}
+                 <X
+                 onClick={() => setIsSearchBarVisible(!isSearchBarVisible)}
+                 className="absolute right-1 bg-red-500 -top-2 w-6 h-6 text-black rounded-full hover:text-white" />
+                </div>
+              ) : (
+                <div>
+                  <Search
+                    onClick={() => setIsSearchBarVisible(!isSearchBarVisible)}
+                  />
+                </div>
+              )}
+             
             </div>
             
             <button
