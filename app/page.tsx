@@ -165,9 +165,8 @@ const FlourishWaveFoods: React.FC = () => {
       items: [
         { name: "Water", price: 500 },
         { name: "Chapman", price: 3_500 },
-        { name: "Smirnof Small", price: 2_000 },
-        { name: "Smirnof Big", price: 2_500 },
-        { name: "Chapman", price: 3_500 },
+        { name: "Smirnoff Small", price: 2_000 },
+        { name: "Smirnoff Big", price: 2_500 },
         { name: "Red Bull", price: 3000 },
         { name: "Power Horse", price: 3000 },
         { name: "Lucozade/Ribena", price: 1500 },
