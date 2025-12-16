@@ -236,6 +236,7 @@ const FlourishWaveFoods: React.FC = () => {
         { name: "Tuwo Shinkafa", price: 4000 },
         { name: "Wheat", price: 4000 },
         { name: "Poundo Yam", price: 4000 },
+        { name: "Semo", price: 4000 },
       ]
     },
     {
@@ -246,6 +247,16 @@ const FlourishWaveFoods: React.FC = () => {
         { name: "Stew", price: 0 },
         { name: "Ogbono", price: 0 },
         { name: "Additional Soup", price: 2500 },
+      ]
+    },
+    {
+      title: "Flourish Waves special soups",
+      items: [
+        { name: "Edikankon", price: 2_500 },
+        { name: "Afam", price: 3_000 },
+        { name: "White Soup", price: 2_500 },
+        { name: "Okra / Draw Soup", price: 2_500 },
+        { name: "Fisherman Soup", price: 3_500 },
       ]
     }
   ];
