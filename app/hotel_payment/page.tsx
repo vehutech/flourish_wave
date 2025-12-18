@@ -30,7 +30,7 @@ export default function MoniepointPayment() {
           onClick={copyAccount}
           className="text-4xl sm:text-5xl md:text-6xl font-black text-black my-6 sm:my-8 tracking-wider leading-tight cursor-pointer p-4 sm:p-6 md:p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl transition-all duration-300 border-4 border-transparent hover:border-blue-600 hover:shadow-xl hover:scale-105 active:scale-95 select-none"
         >
-          5187786182
+          5187779100
         </div>
         
         <p className="text-sm sm:text-base md:text-lg font-bold text-blue-600 mt-3 sm:mt-4 uppercase tracking-wider px-2">
