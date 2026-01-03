@@ -1,3 +1,6 @@
+'use client';
+
+import Image from 'next/image';
 import React from 'react';
 
 // TypeScript interfaces
@@ -32,6 +35,17 @@ export default function EmployeeCard() {
     : new URLSearchParams();
   const id = params.get('id');
   
+  // DEBUG: Log everything
+  console.log('=== EMPLOYEE CARD DEBUG ===');
+  console.log('Full URL:', typeof window !== 'undefined' ? window.location.href : 'Server-side');
+  console.log('Search params:', typeof window !== 'undefined' ? window.location.search : 'Server-side');
+  console.log('Extracted ID:', id);
+  console.log('ID type:', typeof id);
+  console.log('Available employee keys:', Object.keys(employeesData));
+  console.log('Does employee exist?', id ? (id in employeesData) : 'No ID');
+  console.log('Employee data:', id && employeesData[id] ? employeesData[id] : 'Not found');
+  console.log('========================');
+  
   // Get employee data directly - no need for state since it's derived from the URL
   const employee: Employee | null = id && employeesData[id] ? employeesData[id] : null;
 
@@ -41,6 +55,18 @@ export default function EmployeeCard() {
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Employee Not Found</h2>
           <p className="text-gray-600">Please check the QR code and try again.</p>
+          <div className="mt-6 p-4 bg-white rounded-lg shadow text-left max-w-md">
+            <h3 className="font-bold mb-2">Debug Info:</h3>
+            <p className="text-sm text-gray-600 mb-1">
+              <strong>ID from URL:</strong> {id || 'null/undefined'}
+            </p>
+            <p className="text-sm text-gray-600 mb-1">
+              <strong>Available IDs:</strong> {Object.keys(employeesData).join(', ')}
+            </p>
+            <p className="text-sm text-gray-600">
+              <strong>Full URL:</strong> {typeof window !== 'undefined' ? window.location.href : 'Loading...'}
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -78,9 +104,11 @@ export default function EmployeeCard() {
           <div className="relative px-6 pb-4 flex justify-center">
             <div className="relative">
               <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-orange-500 bg-white shadow-xl">
-                <img 
+                <Image 
                   src={employee.photo} 
                   alt={employee.name}
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover"
                 />
               </div>
