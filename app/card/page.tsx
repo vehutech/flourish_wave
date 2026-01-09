@@ -14,17 +14,75 @@ interface EmployeesData {
   [key: string]: Employee;
 }
 
-// Sample employees data - replace with your actual employees.json
+// sample url for testing:
+// prod env - https://flourish-wave.vercel.app/card?id=Damian-opaluwa
+// dev env - http://localhost:3000/card?id=Damian-opaluwa
+
 const employeesData: EmployeesData = {
-  "joseph-clement": {
-    name: "Joseph Clement",
-    role: "House Keeper",
-    photo: "/api/placeholder/300/300"
+  "anthony-faith": {
+    name: "Anthony Faith",
+    role: "Waitress",
+    photo: "anthony_faith.jpeg"
   },
-  "mary-johnson": {
-    name: "Mary Johnson",
-    role: "Front Desk Manager",
-    photo: "/api/placeholder/300/300"
+  "abdulbaki-aliyu": {
+    name: "Abdulbaki Aliyu",
+    role: "Supervisor",
+    photo: "bakii.jpeg"
+  },
+  "Damian-opaluwa": {
+    name: "Damian Opaluwa",
+    role: "Laundry Staff",
+    photo: "damian_opaluwa.jpeg"
+  },
+  "Daniel-emmanuel": {
+    name: "Daniel Emmanuel",
+    role: "Chef",
+    photo: "daniel_emmanuel.jpeg",
+  },
+  "elijah-roseline-titilayo": {
+    name: "Elijah Roseline Titilayo",
+    role: "Bar Attendant",
+    photo: "elijah_rose.jpeg",
+  },
+  "eniolorunda-aderonke": {
+    name: "Eniolarunda Aderonke",
+    role: "Receptionist",
+    photo: "ronke.jpeg",
+  },
+  "enoch-benjamin": {
+    name: "Enoch Benjamin", 
+    role: "Bar Attendant",
+    photo: "enoch_benjamin.jpeg",
+  },
+  "falohun-ayomide-esther": {
+    name: "Falohun Ayomide Esther",
+    role: "Bar Attendant",
+    photo: "falohun_ayomide.jpeg"
+  },
+  "favour-elijah": {
+    name: "Favout Elijah",
+    role: "Receptionist",
+    photo: "fav_elijah.jpeg"
+  },
+  "jacob-clement": {
+    name: "Jacob Clement",
+    role: "House Keeper",
+    photo: "jacob_clement.jpeg"
+  },
+  "ojo-olayemi-micheal": {
+    name: "Ojo Olayemi Micheal",
+    role: "House Keeper",
+    photo: "ojo_olayemi.jpeg"
+  },
+  "oluwaniyi-toyin": {
+    name: "Oluwaniyi Toyin",
+    role: "MD/CEO",
+    photo: "oluwaniyi_toyin.jpeg"
+  },
+  "saidu-abdulrahaman": {
+    name: "Saidu Abdulrahaman",
+    role: "Bar Attendant",
+    photo: "saidu.jpeg"
   }
 };
 
@@ -105,7 +163,7 @@ export default function EmployeeCard() {
             <div className="relative">
               <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-orange-500 bg-white shadow-xl">
                 <Image 
-                  src={employee.photo} 
+                  src={"/images/"+employee.photo} 
                   alt={employee.name}
                   width={300}
                   height={300}
